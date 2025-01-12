@@ -9,7 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../dist/style.css">
     <script src="../data/recipes.js" defer></script>
-    <script src="index.js" defer></script>
+    <script type="module" src="index.js" defer></script>
+    <script type="module" src="../src/algo/forLoop.js" defer></script>
+
     <title>Document</title>
 </head>
 <body class="bg-light-grey">
@@ -20,12 +22,12 @@
         <div class="text-center w-[700px] h-[132px] text-yellow-main font-anton text-[44px] mt-[30px]">     
             <h1>CHERCHEZ PARMI PLUS DE 1500 RECETTES DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES</h1>
         </div>
-        <div class="flex items-center justify-between w-[66%] h-[72px] bg-white rounded-xl mt-[30px]">
-            <input class="w-[70%] ml-[35px] font-manrope" type="text" placeholder="Rechercher une recette, un ingrédient, ...">
-            <button class="flex items-center justify-center h-[52px] w-[52px] bg-black-grey rounded-xl mr-[10px]">
+        <form class="search-bar flex items-center justify-between w-[66%] h-[72px] bg-white rounded-xl mt-[30px]">
+            <input class="input w-[70%] ml-[35px] font-manrope" type="text" placeholder="Rechercher une recette, un ingrédient, ...">
+            <button class="flex items-center justify-center h-[52px] w-[52px] bg-black-grey rounded-xl mr-[10px]" type="submit">
                 <img src="../public/svg/search-bar.svg" alt="">
             </button>
-        </div>
+        </form>
     </header>
     <main class="px-[7%] pt-[20px]">
         <div class="flex justify-between items-center pb-[55px]">
