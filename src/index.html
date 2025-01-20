@@ -1,78 +1,158 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="data:,">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../dist/style.css">
-    <script src="../data/recipes.js" defer></script>
-    <script type="module" src="index.js" defer></script>
-    <script type="module" src="../src/algo/forLoop.js" defer></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../dist/style.css" />
+    <script type="module" src="../data/recipes.js"></script>
+    <script type="module" src="index.js"></script>
+    <script type="module" src="../src/algo/forLoop.js"></script>
 
     <title>Document</title>
-</head>
-<body class="bg-light-grey">
-    <header class="flex flex-col items-center justify-center h-[667px] w-full bg-no-repeat bg-cover" style="background-image: url('../public/svg/background-header.svg');">
-        <div class="absolute left-[5%] top-[51px]">
-            <img src="../public/svg/website-logo.svg" alt="">
-        </div>
-        <div class="text-center w-[700px] h-[132px] text-yellow-main font-anton text-[44px] mt-[30px]">     
-            <h1>CHERCHEZ PARMI PLUS DE 1500 RECETTES DU QUOTIDIEN,SIMPLES ET DÉLICIEUSES</h1>
-        </div>
-        <form class="search-bar flex items-center justify-between w-[66%] h-[72px] bg-white rounded-xl mt-[30px]">
-            <input class="input w-[70%] ml-[35px] font-manrope" type="text" placeholder="Rechercher une recette, un ingrédient, ...">
-            <button class="flex items-center justify-center h-[52px] w-[52px] bg-black-grey rounded-xl mr-[10px]" type="submit">
-                <img src="../public/svg/search-bar.svg" alt="">
-            </button>
-        </form>
+  </head>
+  <body class="bg-light-grey">
+    <header
+      class="flex flex-col items-center justify-center h-[667px] w-full bg-no-repeat bg-cover"
+      style="
+        background-image: url(&quot;../public/svg/background-header.svg&quot;);
+      "
+    >
+      <div class="absolute left-[5%] top-[51px]">
+        <img src="../public/svg/website-logo.svg" alt="" />
+      </div>
+      <div
+        class="text-center w-[700px] h-[132px] text-yellow-main font-anton text-[44px] mt-[30px]"
+      >
+        <h1>
+          CHERCHEZ PARMI PLUS DE 1500 RECETTES DU QUOTIDIEN,SIMPLES ET
+          DÉLICIEUSES
+        </h1>
+      </div>
+      <form
+        class="search-bar flex items-center justify-between w-[66%] h-[72px] bg-white rounded-xl mt-[30px]"
+      >
+        <input
+          class="input w-[70%] ml-[35px] font-manrope"
+          type="text"
+          placeholder="Rechercher une recette, un ingrédient, ..."
+        />
+        <button
+          class="flex items-center justify-center h-[52px] w-[52px] bg-black-grey rounded-xl mr-[10px]"
+          type="submit"
+        >
+          <img src="../public/svg/search-bar.svg" alt="" />
+        </button>
+      </form>
     </header>
     <main class="px-[7%] pt-[20px]">
-        <div class="flex justify-between items-start pb-[55px]">
-            <div class="flex justify-between items-start w-[55%]">
-                <div class="max-h-[324px] dropdown-main overflow-y-auto scrollbar-hide flex items-center justify-around flex-col w-[30%] bg-white rounded-xl">
-                    <div class="dropdown flex items-center justify-between w-full cursor-pointer">
-                        <p class="font-manrope text-base text-black-grey p-[15px]">Ingrédients</p>
-                        <img class="arrow-down p-[15px]" src="../public/svg/dropdown-arrow-down.svg" alt="">
-                        <img class="arrow-top hidden p-[15px]" src="../public/svg/dropdown-arrow-top.svg" alt="">
-                    </div>
-                    <div class="option-dropdown flex flex-row hidden border border-light-grey m-[15px]">
-                        <input class="ingredients-search w-[85%] h-[36px]" type="text">
-                        <img src="../public/svg/search-icon-grey.svg" alt="">
-                    </div>
-                    <div class="flex flex-col dropdown-option ingredients-dropdown-option hidden w-full"></div>
-                </div>
-                <div class="max-h-[324px] dropdown-main overflow-y-auto scrollbar-hide flex items-center justify-around flex-col w-[30%] bg-white rounded-xl">
-                    <div class="dropdown flex items-center justify-between w-full cursor-pointer">
-                        <p class="font-manrope text-base text-black-grey p-[15px]">Appareils</p>
-                        <img class="arrow-down p-[15px]" src="../public/svg/dropdown-arrow-down.svg" alt="">
-                        <img class="arrow-top hidden p-[15px]" src="../public/svg/dropdown-arrow-top.svg" alt="">
-                    </div>
-                    <div class="option-dropdown flex flex-row hidden border border-light-grey m-[15px]">
-                        <input class="appliances-search w-[85%] h-[36px]" type="text">
-                        <img src="../public/svg/search-icon-grey.svg" alt="">
-                    </div>
-                    <div class="flex flex-col dropdown-option appliances-dropdown-option hidden w-full"></div>
-                </div>
-                <div class="max-h-[324px] dropdown-main overflow-y-auto scrollbar-hide flex items-center justify-around flex-col w-[30%] bg-white rounded-xl">
-                    <div class="dropdown flex items-center justify-between w-full cursor-pointer">
-                        <p class="font-manrope text-base text-black-grey p-[15px]">Ustensiles</p>
-                        <img class="arrow-down p-[15px]" src="../public/svg/dropdown-arrow-down.svg" alt="">
-                        <img class="arrow-top hidden p-[15px]" src="../public/svg/dropdown-arrow-top.svg" alt="">
-                    </div>
-                    <div class="option-dropdown flex flex-row hidden border border-light-grey m-[15px]">
-                        <input class=" ustensils-search w-[85%] h-[36px]" type="text">
-                        <img src="../public/svg/search-icon-grey.svg" alt="">
-                    </div>
-                    <div class="flex flex-col dropdown-option ustensils-dropdown-option hidden w-full"></div>
-                </div>
+      <div class="flex justify-between items-start pb-[55px]">
+        <div class="flex justify-between items-start w-[55%]">
+          <div
+            class="max-h-[324px] dropdown-main overflow-y-auto scrollbar-hide flex items-center justify-around flex-col w-[30%] bg-white rounded-xl"
+          >
+            <div
+              class="dropdown flex items-center justify-between w-full cursor-pointer"
+            >
+              <p class="font-manrope text-base text-black-grey p-[15px]">
+                Ingrédients
+              </p>
+              <img
+                class="arrow-down p-[15px]"
+                src="../public/svg/dropdown-arrow-down.svg"
+                alt=""
+              />
+              <img
+                class="arrow-top hidden p-[15px]"
+                src="../public/svg/dropdown-arrow-top.svg"
+                alt=""
+              />
             </div>
-            <div id="recipe-count" class="text-black-grey font-anton text-xl"></div>
-        </div> 
-        <div id="main-recipes" class="flex flex-wrap justify-between w-full pb-[66px]">
+            <div
+              class="option-dropdown flex flex-row hidden border border-light-grey m-[15px]"
+            >
+              <input class="ingredients-search w-[85%] h-[36px]" type="text" />
+              <img src="../public/svg/search-icon-grey.svg" alt="" />
+            </div>
+            <div
+              class="flex flex-col dropdown-option ingredients-dropdown-option hidden w-full"
+            ></div>
+          </div>
+          <div
+            class="max-h-[324px] dropdown-main overflow-y-auto scrollbar-hide flex items-center justify-around flex-col w-[30%] bg-white rounded-xl"
+          >
+            <div
+              class="dropdown flex items-center justify-between w-full cursor-pointer"
+            >
+              <p class="font-manrope text-base text-black-grey p-[15px]">
+                Appareils
+              </p>
+              <img
+                class="arrow-down p-[15px]"
+                src="../public/svg/dropdown-arrow-down.svg"
+                alt=""
+              />
+              <img
+                class="arrow-top hidden p-[15px]"
+                src="../public/svg/dropdown-arrow-top.svg"
+                alt=""
+              />
+            </div>
+            <div
+              class="option-dropdown flex flex-row hidden border border-light-grey m-[15px]"
+            >
+              <input class="appliances-search w-[85%] h-[36px]" type="text" />
+              <img src="../public/svg/search-icon-grey.svg" alt="" />
+            </div>
+            <div
+              class="flex flex-col dropdown-option appliances-dropdown-option hidden w-full"
+            ></div>
+          </div>
+          <div
+            class="max-h-[324px] dropdown-main overflow-y-auto scrollbar-hide flex items-center justify-around flex-col w-[30%] bg-white rounded-xl"
+          >
+            <div
+              class="dropdown flex items-center justify-between w-full cursor-pointer"
+            >
+              <p class="font-manrope text-base text-black-grey p-[15px]">
+                Ustensiles
+              </p>
+              <img
+                class="arrow-down p-[15px]"
+                src="../public/svg/dropdown-arrow-down.svg"
+                alt=""
+              />
+              <img
+                class="arrow-top hidden p-[15px]"
+                src="../public/svg/dropdown-arrow-top.svg"
+                alt=""
+              />
+            </div>
+            <div
+              class="option-dropdown flex flex-row hidden border border-light-grey m-[15px]"
+            >
+              <input class="ustensils-search w-[85%] h-[36px]" type="text" />
+              <img src="../public/svg/search-icon-grey.svg" alt="" />
+            </div>
+            <div
+              class="flex flex-col dropdown-option ustensils-dropdown-option hidden w-full"
+            ></div>
+          </div>
         </div>
+        <div id="recipe-count" class="text-black-grey font-anton text-xl"></div>
+      </div>
+      <div class="tags-container flex flex-wrap gap-2 p-4"></div>
+      <p class="error-message text-red font-anton text-xl hidden"></p>
+      <div
+        id="main-recipes"
+        class="flex flex-wrap justify-between w-full pb-[66px]"
+      ></div>
     </main>
-</body>
+  </body>
 </html>

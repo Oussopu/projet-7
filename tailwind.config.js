@@ -10,6 +10,7 @@ export default {
         'medium-grey': '#7A7A7A',
         'light-grey': '#E5E5E5',
         'yellow-main': '#FFD15B',
+        'red': '#DC143C',
       },
     },
     accentColor: ({ theme }) => ({

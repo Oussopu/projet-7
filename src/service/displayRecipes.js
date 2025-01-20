@@ -1,5 +1,5 @@
 function createRecipeCard(recipe) {
-    return `
+  return `
       <div class="h-[731px] w-[30%] rounded-3xl bg-white mb-[66px]">
         <div class="h-[35%] rounded-t-3xl relative">
           <img src="../public/img/${recipe.image}" alt="${recipe.name}" class="h-full w-full object-cover rounded-t-3xl">
@@ -15,25 +15,29 @@ function createRecipeCard(recipe) {
           </p>
           <h3 class="pt-[32px] text-xs font-manrope font-bold text-medium-grey">INGRÉDIENTS</h3>
           <div class="flex flex-wrap">
-            ${recipe.ingredients.map(ingredient => `
+            ${recipe.ingredients
+              .map(
+                (ingredient) => `
               <div class="w-[45%] pt-[20px]">
                 <p class="font-manrope text-sm text-black-grey">${ingredient.ingredient}</p>
                 <p class="font-manrope text-sm text-medium-grey">
-                  ${ingredient.quantity || ''} ${ingredient.unit || ''}
+                  ${ingredient.quantity || ""} ${ingredient.unit || ""}
                 </p>
               </div>
-            `).join('')}
+            `,
+              )
+              .join("")}
           </div>
         </div>
       </div>
-    `
-  }
+    `;
+}
 
 export const displayRecipes = (recipesToDisplay) => {
-    const cardsContainer = document.getElementById("main-recipes")
-    cardsContainer.innerHTML = ""
-    recipesToDisplay.forEach(recipe => {
-      const recipeCard = createRecipeCard(recipe)
-      cardsContainer.innerHTML += recipeCard
-    })
-  }
+  const cardsContainer = document.getElementById("main-recipes");
+  cardsContainer.innerHTML = "";
+  recipesToDisplay.forEach((recipe) => {
+    const recipeCard = createRecipeCard(recipe);
+    cardsContainer.innerHTML += recipeCard;
+  });
+};

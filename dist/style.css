@@ -632,6 +632,10 @@ video {
   margin-top: 30px;
 }
 
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
 .flex {
   display: flex;
 }
@@ -756,8 +760,8 @@ video {
   justify-content: space-around;
 }
 
-.overflow-hidden {
-  overflow: hidden;
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .overflow-y-auto {
@@ -774,6 +778,10 @@ video {
 
 .rounded-xl {
   border-radius: 0.75rem;
+}
+
+.rounded {
+  border-radius: 0.25rem;
 }
 
 .rounded-t-3xl {
@@ -829,6 +837,14 @@ video {
 
 .p-\[25px\] {
   padding: 25px;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.p-2 {
+  padding: 0.5rem;
 }
 
 .px-\[7\%\] {
@@ -919,9 +935,18 @@ video {
   color: rgb(122 122 122 / var(--tw-text-opacity, 1));
 }
 
+.text-red {
+  --tw-text-opacity: 1;
+  color: rgb(220 20 60 / var(--tw-text-opacity, 1));
+}
+
 .text-yellow-main {
   --tw-text-opacity: 1;
   color: rgb(255 209 91 / var(--tw-text-opacity, 1));
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .scrollbar-hide {
