@@ -1,3 +1,4 @@
+import { forLoop } from "./algo/forLoop.js";
 import { displayRecipeCount } from "./service/displayRecipeCount.js";
 import { displayRecipes } from "./service/displayRecipes.js";
 import {
@@ -24,6 +25,7 @@ import { recipes } from "../../data/recipes.js";
 
 displayRecipes(recipes);
 displayRecipeCount(recipes);
+forLoop();
 populateIngredientsDropdown(ingredients);
 populateAppliancesDropdown(appliances);
 populateUstensilsDropdown(ustensils);

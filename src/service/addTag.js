@@ -1,7 +1,7 @@
 import { normalizeStr } from "../utils/normalizeStr.js";
-import { filterRecipesByTags } from "../algo/filterRecipesByTag.js";
 import { tagsContainer, activeTags } from "../utils/tagContainer.js";
 import { removeTag } from "./removeTag.js";
+import { applyFilters } from "../algo/forLoop.js";
 
 export function addTag(category, value) {
   const normalizedValue = normalizeStr(value);
@@ -42,5 +42,5 @@ export function addTag(category, value) {
 
   tagsContainer.appendChild(tag);
 
-  filterRecipesByTags();
+  applyFilters();
 }
